@@ -1,0 +1,62 @@
+/* General layout */
+.main-content {
+  width: 75%;
+  float: left;
+  padding: 1em 2em;
+}
+
+.toc {
+  width: 20%;
+  float: right;
+  position: sticky;
+  top: 80px;
+  background-color: #f4f4f4;
+  padding: 1em;
+  border-radius: 10px;
+}
+
+/* Floated images */
+figure:nth-of-type(odd) img {
+  float: left;
+  margin-right: 20px;
+}
+
+figure:nth-of-type(even) img {
+  float: right;
+  margin-left: 20px;
+}
+
+figure::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/* Fixed nav bar */
+.topnav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+  background: linear-gradient(90deg, #b2d732, #92c12f);
+}
+
+/* Scroll margin to prevent nav overlap */
+h2, h3, h4, h5 {
+  scroll-margin-top: 80px;
+}
+
+/* Basic responsive */
+@media screen and (max-width: 1070px) {
+  .main-content {
+    width: 100%;
+    float: none;
+  }
+  .toc {
+    width: 100%;
+    float: none;
+    position: relative;
+    top: auto;
+    margin-bottom: 1em;
+  }
+}
